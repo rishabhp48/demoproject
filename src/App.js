@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/navbar";
 import "./App.css";
 import Home from "./components/home";
@@ -11,12 +11,12 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <BrowserRouter>
+      <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={About} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/services" component={Services} exact />
-      </BrowserRouter>
+      </Switch>
     </>
   );
 };
