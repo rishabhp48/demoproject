@@ -19,7 +19,7 @@ const Navbar = () => {
             <NavLink exact to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink exact to="https://rishabhp48.github.io/demoproject/contact">Contact Us</NavLink>
+            <NavLink exact to="/contact">Contact Us</NavLink>
           </li>
           <li>
             <NavLink exact to="/services">Services</NavLink>
