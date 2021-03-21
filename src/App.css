@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: sans-serif;
+  background: rgb(255, 255, 255);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  background: rgba(3, 2, 2);
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  z-index: 10;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.header h2 {
+  display: inline-block;
+  margin: 9px 0px 0px 50px;
+
+  background: linear-gradient(to right, crimson 50%, whitesmoke 50%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+#sidebarmenu {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 45px;
+  width: 250px;
+  background: rgb(206, 30, 65);
+  transform: translateX(-250px);
+  transition: transform 250ms ease-in-out;
+  z-index: 100;
 }
 
-.App-link {
-  color: #61dafb;
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu li {
+  color: aliceblue;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.menu li a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: whitesmoke;
+  padding: 20px;
+}
+
+#opensidebar:checked ~ #sidebarmenu {
+  transform: translateX(0px);
+}
+
+.sidebarIcontoggle {
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  z-index: 20;
+  top: 22px;
+  left: 15px;
+  cursor: pointer;
+}
+
+.spinner {
+  height: 3px;
+  background: rgb(206, 30, 65);
+  transition: all 0.3s;
+}
+
+.spinner.middle,
+.spinner.bottom {
+  margin-top: 3px;
+}
+
+#opensidebar:checked ~ .sidebarIcontoggle > .spinner.middle {
+  opacity: 0;
+}
+
+#opensidebar:checked ~ .sidebarIcontoggle > .spinner.top {
+  transform: rotate(135deg);
+  margin-top: 8px;
+}
+
+#opensidebar:checked ~ .sidebarIcontoggle > .spinner.bottom {
+  margin-top: -8px;
+  transform: rotate(-135deg);
+}
+.home-title {
+  transform: translate(0, 10em);
+}
+.home-title h2 {
+  display: inline-block;
+  color: #dc143c;
+  font-size: 35px;
+}
+
+.home-title p {
+  font-size: 20px;
+}
+
+.home-title button {
+  border: 1px solid crimson;
+  border-radius: 50px;
+  margin-top: 4em;
+}
+
+.home-title button a {
+  text-decoration: none;
+  color: crimson;
+}
+.right-side img {
+  width: 50em;
+  height: 30em;
+  position: relative;
+  left: 10em;
+  top: 2em;
+}
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: no-wrap;
+}
+
+.right-side {
+  animation: updown 1s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(10px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(-10px);
   }
+}
+
+label {
+  color: #dc143c;
+  font-size: 20px;
+}
+
+.form-check {
+  margin-left: 10px;
+}
+
+.about h1 {
+  background: linear-gradient(to right, crimson, black);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  display: inline-block;
+  border-bottom: 1px solid crimson;
+}
+
+.cardprops {
+  display: inline;
 }
